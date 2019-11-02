@@ -5,17 +5,23 @@ import time
 from selenium.webdriver import Firefox
 from selenium.webdriver.firefox.options import Options
 
-
-opts = Options()
-# change the following setting to False if you want to see the browser
-opts.headless = True
-browser = Firefox(options=opts)
-
+# some configuration settings:
 login_url = "https://www.myanonamouse.net/login.php"
 username = os.environ.get("MAM_USERNAME")
 password = os.environ.get("MAM_PASSWORD")
 points_to_give = "1000"
 bonus_cap = 20000
+
+
+def open_browser():
+    """
+    instatiate the selenium webdriver
+    """
+    opts = Options()
+    # change the following setting to False if you want to see the browser
+    opts.headless = True
+
+    return Firefox(options=opts)
 
 
 def site_login():
@@ -89,6 +95,8 @@ if __name__ == "__main__":
         )
         sys.exit(-1)
 
+    print("open the browser session")
+    browser = open_browser()
     print("opening browser and logging in MAM")
     site_login()
     print("checking bonus points")
