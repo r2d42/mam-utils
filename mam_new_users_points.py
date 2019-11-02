@@ -10,7 +10,7 @@ login_url = "https://www.myanonamouse.net/login.php"
 username = os.environ.get("MAM_USERNAME")
 password = os.environ.get("MAM_PASSWORD")
 points_to_give = "1000"
-bonus_cap = 20000
+bonus_cap = 10000
 
 
 def open_browser():
@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
     print("open the browser session")
     browser = open_browser()
-    print("opening browser and logging in MAM")
+    print("logging in MAM")
     site_login()
     print("checking bonus points")
     starting_bonus_points = get_bonus_points()
