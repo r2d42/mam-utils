@@ -19,7 +19,7 @@ def open_browser():
     """
     opts = Options()
     # change the following setting to False if you want to see the browser
-    opts.headless = True
+    opts.headless = False
 
     return Firefox(options=opts)
 
@@ -75,12 +75,12 @@ def give_points(member_username, member_url, points_to_give):
     bg.send_keys(points_to_give)
     browser.find_element_by_id("sendPointsDetailP").click()
     time.sleep(1)
-    sending = browser.find_elements_by_class_name("ui-button-text")
+    sending = browser.find_elements_by_class_name("ui-button")
     sending[1].click()
     time.sleep(1)
     result = browser.find_element_by_class_name("ui-dialog-title").text
     print(f"{result} for user {member_username}")
-    dialog = browser.find_elements_by_class_name("ui-button-text")
+    dialog = browser.find_elements_by_class_name("ui-button")
     dialog[1].click()
     time.sleep(1)
 
