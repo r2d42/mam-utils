@@ -19,7 +19,7 @@ def open_browser():
     """
     opts = Options()
     # change the following setting to False if you want to see the browser
-    opts.headless = False
+    opts.headless = True
 
     return Firefox(options=opts)
 
