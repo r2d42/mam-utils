@@ -119,6 +119,6 @@ if __name__ == "__main__":
         give_points(member_username, member_url, points_to_give)
 
     final_bonus_points = get_bonus_points()
-    print(f"final bonous points={final_bonus_points}")
+    print(f"final bonus points={final_bonus_points}")
 
     browser.close()
